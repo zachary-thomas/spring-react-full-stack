@@ -52,7 +52,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MTConfigurable"
+    "settings.editor.selected.configurable": "MTConfigurable",
+    "spring.configuration.checksum": "cd73502828457d15655bbd7a63fb0bc8"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -64,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650662736808</updated>
       <workItem from="1650662739427" duration="5211000" />
+      <workItem from="1651711454035" duration="658000" />
     </task>
     <servers />
   </component>
