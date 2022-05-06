@@ -15,15 +15,18 @@ function App() {
 
   // 0 Dependencies, will run once when mounted
   useEffect(() => {
-    console.log("Component is mounted")
-      fetchStudents();
+    console.log("Component is mounted");
+    fetchStudents();
   }, [])
 
-  return (
-    <div className="App">
-        {students.length}
-    </div>
-  );
+  if(students.length <=0){
+    return "No data";
+  }
+
+  return students.map((student, index)=> {
+    <p key={index}>{student.id} {student.name}</p>
+  })
+
 }
 
 export default App;
