@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 import {getAllStudents} from "./Client";
-import { 
-  Layout, 
-  Menu, 
-  Breadcrumb,
-  Table
+import {
+    Layout,
+    Menu,
+    Breadcrumb,
+    Table, Spin, Empty
 } from 'antd';
 import {
     DesktopOutlined,
@@ -13,10 +13,13 @@ import {
     FileOutlined,
     TeamOutlined,
     UserOutlined,
+    LoadingOutlined
 } from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
+
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 const columns = [
   {
@@ -45,7 +48,8 @@ const columns = [
 
 function App() {
   const [students, setStudents] = useState([]);
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(false);
+  const[fetching, setFetching] = useState(true);
 
   const fetchStudents = () =>
       getAllStudents()
@@ -53,6 +57,7 @@ function App() {
           .then(data => {
               console.log(data);
               setStudents(data);
+              setFetching(false);
           });
 
   // 0 Dependencies, will run once when mounted
@@ -62,12 +67,21 @@ function App() {
   }, []);
 
   const renderStudents= () => {
+      if(fetching){
+          return <Spin indicator={antIcon} />
+      }
     if(students.length <= 0){
-      return "no data available";
+      return <Empty />;
     }
     return <Table
         dataSource = {students}
-        columns = {columns}/>;
+        columns = {columns}
+        bordered
+        title={() => 'Students'}
+        pagination={{pageSize: 50}}
+        scroll={{y: 240}}
+        rowKey={(student) => student.id}
+    />;
   }
 
   return <Layout style={{ minHeight: '100vh' }}>
@@ -106,7 +120,7 @@ function App() {
                 {renderStudents()}
             </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>by Zachary Thomas</Footer>
     </Layout>
   </Layout>
 
