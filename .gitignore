@@ -36,3 +36,4 @@ build/
 student-react/src/node/node.exe
 
 .idea/
+.idea/workspace.xml
