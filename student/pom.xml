@@ -42,7 +42,7 @@
 				<configuration>
 					<excludes>
 						<exclude>
-							<groupId>org.projectlombok</groupId>
+							<groupId>org.project-lombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
@@ -51,7 +51,7 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.5.2</version>
+				<version>3.2.1</version>
 				<configuration>
 					<from>
 						<image>openjdk:17</image>
@@ -60,8 +60,8 @@
 						<ports>
 							<port>8080</port>
 						</ports>
-						<!--	Open container inititive-->
 						<format>OCI</format>
+						<mainClass>com.amigos.student.StudentApplication</mainClass>
 					</container>
 				</configuration>
 			</plugin>
