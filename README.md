@@ -11,5 +11,14 @@ Build the docker container:
 mvn compile jib:dockerBuild -Dimage=fullstack:v1
 `
 
+Run on localhost 8080:
+
+`docker run --name fullstack -p 8080:8080 fullstack:v1
+`
+
+To push to dockerhub:
+
+`mvn compile jib:dockerBuild -Dimage=fullstack:v1`
+
 Follows this course:
 https://github.com/amigoscode/spring-boot-fullstack-professional/
