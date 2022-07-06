@@ -25,4 +25,9 @@ public class StudentController {
                         .gender(Gender.MALE)
                         .build());
     }
+
+    @PostMapping
+    public Student addStudent(@ResponseBody Student student){
+        studentService.addStudent(student);
+    }
 }
