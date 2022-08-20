@@ -5,10 +5,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
-
     @Autowired
     StudentRepository studentRepository;
     public Student addStudent(Student student) {
-        return studentRepository.addStudent(student);
+        return studentRepository.save(StudentEntity.from(student));
+    }
+
+    public void deleteStudent(Student student) {
+        studentRepository.delete(StudentEntity.from(student));
     }
 }
