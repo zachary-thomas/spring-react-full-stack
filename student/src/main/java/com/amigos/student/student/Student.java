@@ -15,4 +15,13 @@ public class Student {
     private String name;
     private String email;
     private Gender gender;
+
+    public static Student from(StudentEntity studentEntity){
+        return Student.builder()
+                .email(studentEntity.getEmail())
+                .id(studentEntity.getId())
+                .name(studentEntity.getName())
+                .gender(studentEntity.getGender())
+                .build();
+    }
 }

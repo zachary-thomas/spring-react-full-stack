@@ -8,7 +8,7 @@ public class StudentService {
     @Autowired
     StudentRepository studentRepository;
     public Student addStudent(Student student) {
-        return studentRepository.save(StudentEntity.from(student));
+        return Student.from(studentRepository.save(StudentEntity.from(student)));
     }
 
     public void deleteStudent(Student student) {
