@@ -11,6 +11,7 @@ import java.util.List;
 public class StudentController {
 
     private final StudentService studentService;
+
     @GetMapping
     public List<Student> getAllStudents() {
         return List.of(Student.builder()
@@ -28,10 +29,12 @@ public class StudentController {
     }
 
     @PostMapping
-    public Student addStudent(@RequestBody Student student){
+    public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }
 
     @DeleteMapping
-    public Student deleteStudent(@RequestBody Student student) {return studentService.deleteStudent(student);}
+    public Student deleteStudent(@RequestBody Student student) {
+        studentService.deleteStudent(student);
+    }
 }
