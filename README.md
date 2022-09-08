@@ -22,7 +22,7 @@ To push to dockerhub:
 
 Run pom profile: (You'll need put in your own credentials)
 
-`mvnw clean install -P build-frontend -P jib-push-to-dockerhub -Dimage=2
+`mvnw clean install -P build-frontend -P jib-push-to-dockerhub -Dimage=latest
 mvnw clean install -P build-frontend -P jib-push-to-local -Dimage=latest`
 
 

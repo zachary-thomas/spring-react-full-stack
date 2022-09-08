@@ -34,7 +34,7 @@ public class StudentController {
     }
 
     @DeleteMapping
-    public Student deleteStudent(@RequestBody Student student) {
+    public void deleteStudent(@RequestBody Student student) {
         studentService.deleteStudent(student);
     }
 }
