@@ -28,6 +28,11 @@ public class StudentController {
                         .build());
     }
 
+    @PostMapping("/edit")
+    public Student editStudent(@RequestBody Student student) {
+        return studentService.addStudent(student);
+    }
+
     @PostMapping
     public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
