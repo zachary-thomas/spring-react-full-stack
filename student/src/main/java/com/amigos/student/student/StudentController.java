@@ -28,8 +28,8 @@ public class StudentController {
                         .build());
     }
 
-    @PostMapping("/edit")
-    public Student editStudent(@RequestBody Student student) {
+    @PostMapping("/{studentId}")
+    public Student editStudent(@RequestBody Student student, @RequestParam(value = "studentId") Long studentId) {
         return studentService.addStudent(student);
     }
 
