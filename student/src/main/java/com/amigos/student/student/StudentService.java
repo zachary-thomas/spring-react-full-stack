@@ -8,13 +8,13 @@ public class StudentService {
     @Autowired
     StudentRepository studentRepository;
     public Student addStudent(Student student) {
-        return Student.from(studentRepository.save(StudentEntity.from(student)));
+        return studentRepository.save(student);
     }
 
     public Student editStudent(Student student) {
-        return Student.from(studentRepository.save(StudentEntity.from(student)));
+        return studentRepository.save(student);
     }
     public void deleteStudent(Student student) {
-        studentRepository.delete(StudentEntity.from(student));
+        studentRepository.delete(student);
     }
 }
