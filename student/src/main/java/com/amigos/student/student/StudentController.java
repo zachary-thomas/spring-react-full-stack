@@ -30,7 +30,7 @@ public class StudentController {
 
     @PostMapping("/{studentId}")
     public Student editStudent(@RequestBody Student student, @PathVariable(value = "studentId") Long studentId) {
-        return studentService.addStudent(student);
+        return studentService.editStudent(student);
     }
 
     @PostMapping
