@@ -21,6 +21,12 @@ public class StudentController {
                         .gender(Gender.FEMALE)
                         .build(),
                 Student.builder()
+                        .id(1L)
+                        .name("Sultan")
+                        .email("sultan@email.edu")
+                        .gender(Gender.OTHER)
+                        .build(),
+                Student.builder()
                         .id(2L)
                         .name("Alex")
                         .email("alex@email.edu")
