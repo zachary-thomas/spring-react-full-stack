@@ -14,7 +14,7 @@ import lombok.*;
 @Entity
 // or @Data
 public class Student {
-@Id
+    @Id
     private Long id;
     private String name;
     private String email;
